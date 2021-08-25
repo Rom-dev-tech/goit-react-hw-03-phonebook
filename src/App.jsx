@@ -8,6 +8,9 @@ import ContactsList from './components/ContactsList';
 import Filter from './components/Filter';
 import NotificatiomMessage from './components/NotificatiomMessage';
 import Clock from './components/Clock';
+import Title from './components/Title';
+import MainTitle from './components/MainTitle';
+import Сounter from './components/Сounter';
 
 class App extends Component {
   state = {
@@ -81,16 +84,21 @@ class App extends Component {
     const totalContactsCount = contacts.length;
     return (
       <Container>
-        <Clock title={'Phonebook'} />
+        <Clock direction={'center'} size={30} />
+        <MainTitle title={'Phonebook'} />
 
-        <div>Total contacts: {totalContactsCount}</div>
+        <Сounter
+          title={'Total contacts:'}
+          totalContactsCount={totalContactsCount}
+        />
+
         <ContactsFomr onSubmit={this.addContact} />
 
         {totalContactsCount <= 0 ? (
           <NotificatiomMessage message={'no contacts yet ...'} />
         ) : (
           <>
-            <h2>Contacts</h2>
+            <Title title={'Contacts'} type={'h2'} />
             <Filter value={filter} onChange={this.changeFilter} />
 
             <ContactsList

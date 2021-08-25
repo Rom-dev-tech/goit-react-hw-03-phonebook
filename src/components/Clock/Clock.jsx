@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Clock.scss';
 
 export default class Clock extends Component {
@@ -20,11 +21,19 @@ export default class Clock extends Component {
   }
 
   render() {
+    const time = this.state.time;
+    const { direction, size } = this.props;
     return (
-      <div className="clock__wrapper">
-        <h1 className="clock__title">{this.props.title}</h1>
-        <p className="clock__face">{this.state.time}</p>
+      <div className="clock__wrapper" style={{ textAlign: `${direction}` }}>
+        <p className="clock__face" style={{ fontSize: `${size}px` }}>
+          {time}
+        </p>
       </div>
     );
   }
 }
+
+Clock.propTypes = {
+  direction: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+};

@@ -1,0 +1,19 @@
+@import 'styles/shared';
+
+.clock__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 450px;
+  padding: 10px 0;
+}
+
+.clock__title {
+  margin-bottom: 0;
+}
+
+.clock__face {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 0;
+}

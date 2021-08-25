@@ -1,0 +1,32 @@
+@import 'styles/shared.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $black;
+  height: 200px;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.form__label {
+  display: block;
+}
+
+.form__input {
+  display: block;
+  border-radius: 4px;
+  border: 1px solid $grey;
+}
+
+.form__name {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.form__button {
+  @extend %button;
+  max-width: 100px;
+}

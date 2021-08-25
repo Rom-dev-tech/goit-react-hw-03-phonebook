@@ -23,6 +23,7 @@ class ContactsFomr extends Component {
     this.props.onSubmit(this.state);
 
     this.reset();
+    this.props.onClose();
   };
 
   reset = () => {
@@ -41,13 +42,14 @@ class ContactsFomr extends Component {
             autoComplete="off"
             type="text"
             name="name"
+            placeholder="Nikoly Mosalov"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="The name can only consist of letters, apostrophes, dashes and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan, etc."
             required
           />
         </label>
 
-        <label>
+        <label className="form__label">
           <span className="form__name">Number</span>
           <input
             className="form__input"
@@ -56,6 +58,7 @@ class ContactsFomr extends Component {
             autoComplete="off"
             type="tel"
             name="number"
+            placeholder="+38067-777-77-77"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="The phone number must be digits and can contain spaces, dashes, parentheses and can start with + "
             required
@@ -71,6 +74,7 @@ class ContactsFomr extends Component {
 
 ContactsFomr.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
 };
 
 export default ContactsFomr;

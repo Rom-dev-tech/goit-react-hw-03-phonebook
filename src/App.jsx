@@ -11,11 +11,16 @@ import Clock from './components/Clock';
 import Title from './components/Title';
 import MainTitle from './components/MainTitle';
 import Сounter from './components/Сounter';
+import Modal from './components/Modal';
+import IconButton from './components/IconButton';
+import { ReactComponent as AddIcon } from './icons/add.svg';
+import FlexWrapper from './components/FlexWrapper';
 
 class App extends Component {
   state = {
     contacts: [],
     filter: '',
+    showModal: false,
   };
 
   componentDidMount() {
@@ -78,27 +83,46 @@ class App extends Component {
     );
   };
 
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
   render() {
-    const { contacts, filter } = this.state;
+    const { contacts, filter, showModal } = this.state;
     const visibleContacts = this.getVisibleContacts();
     const totalContactsCount = contacts.length;
     return (
       <Container>
-        <Clock direction={'center'} size={30} />
-        <MainTitle title={'Phonebook'} />
+        <Clock direction={'end'} size={30} />
+        <MainTitle title={'Phonebook'} size={5} direction={'center'} />
 
-        <Сounter
-          title={'Total contacts:'}
-          totalContactsCount={totalContactsCount}
-        />
+        <FlexWrapper>
+          <Сounter
+            title={'Total contacts:'}
+            totalContactsCount={totalContactsCount}
+          />
 
-        <ContactsFomr onSubmit={this.addContact} />
+          <IconButton onClick={this.toggleModal} aria-label="add contact">
+            <AddIcon width="20" height="20" fill="#03a9f4" />
+          </IconButton>
+        </FlexWrapper>
+
+        {showModal && (
+          <Modal onClose={this.toggleModal}>
+            <ContactsFomr
+              onSubmit={this.addContact}
+              onClose={this.toggleModal}
+            />
+          </Modal>
+        )}
 
         {totalContactsCount <= 0 ? (
           <NotificatiomMessage message={'no contacts yet ...'} />
         ) : (
           <>
-            <Title title={'Contacts'} type={'h2'} />
+            <Title title={'Contacts'} type={'h1'} />
             <Filter value={filter} onChange={this.changeFilter} />
 
             <ContactsList

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Сounter = ({ title, totalContactsCount }) => {
   return (
-    <p>
+    <div style={{ fontSize: '2rem' }}>
       {title} {totalContactsCount}
-    </p>
+    </div>
   );
 };
 

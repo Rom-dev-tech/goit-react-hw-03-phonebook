@@ -30,16 +30,8 @@ const ContactsList = ({ contacts, onDeleteContact }) => (
           onClick={() => onDeleteContact(id)}
           aria-label="delete contact"
         >
-          <AddIcon width="30" height="30" fill="red" />
+          <AddIcon width="20" height="20" fill="red" />
         </IconButton>
-
-        {/* <button
-          type="button"
-          className="delete__btn"
-          onClick={() => onDeleteContact(id)}
-        >
-          delete
-        </button> */}
       </li>
     ))}
   </ul>

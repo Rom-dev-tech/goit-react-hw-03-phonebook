@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../FlexWrapper/FlexWrapper.scss';
 
 const FlexWrapper = ({ children }) => (
-  <div className="flexWrapper">{children}</div>
+  <div className="flex__wrapper">{children}</div>
 );
 
 FlexWrapper.propTypes = {

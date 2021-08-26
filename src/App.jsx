@@ -95,12 +95,12 @@ class App extends Component {
     const totalContactsCount = contacts.length;
     return (
       <Container>
-        <Clock direction={'end'} size={30} />
-        <MainTitle title={'Phonebook'} size={5} direction={'center'} />
+        <Clock direction="end" size={30} />
+        <MainTitle title="Phonebook" size={5} direction="center" />
 
         <FlexWrapper>
           <Сounter
-            title={'Total contacts:'}
+            title="Total contacts:"
             totalContactsCount={totalContactsCount}
           />
 
@@ -122,7 +122,7 @@ class App extends Component {
           <NotificatiomMessage message={'no contacts yet ...'} />
         ) : (
           <>
-            <Title title={'Contacts'} type={'h1'} />
+            <Title title="Contacts" type="h1" />
             <Filter value={filter} onChange={this.changeFilter} />
 
             <ContactsList

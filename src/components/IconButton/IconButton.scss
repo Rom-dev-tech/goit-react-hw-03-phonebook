@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     &:not(:last-child) {
       padding: 15px 40px;
     }

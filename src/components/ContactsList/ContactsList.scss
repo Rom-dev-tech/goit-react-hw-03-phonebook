@@ -17,11 +17,11 @@
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(3, 169, 244, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding: 10px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $desktop) {
     margin-bottom: 20px;
     padding: 20px;
     width: 80%;
@@ -36,14 +36,14 @@
   font-size: 15px;
   margin-bottom: 0;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 25px;
   }
 }
 
 .contacts__name {
   margin-right: 20px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-right: 150px;
   }
 }
@@ -61,7 +61,7 @@
   height: 10px;
   margin-right: 5px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 20px;
     height: 20px;
     margin-right: 15px;

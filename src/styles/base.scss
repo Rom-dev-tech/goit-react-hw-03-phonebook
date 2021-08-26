@@ -9,7 +9,15 @@ body {
   font-family: $primary-font-stack;
 
   background-image: url('http://bgfons.com/upload/paper_grid_PNG5421.png');
-  // background-size: cover;
+
+  @media screen and (min-width: $tablet) {
+    background: url('../images/a-book-gd4a363064_1280.png');
+  }
+
+  @media screen and (min-width: $desktop) {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 img {

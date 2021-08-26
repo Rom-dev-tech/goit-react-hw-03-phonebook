@@ -10,7 +10,7 @@ const ContactsList = ({ contacts, onDeleteContact }) => (
   <ul className="contacts__list">
     {contacts.map(({ id, name, number }) => (
       <li className="contacts__item" key={id}>
-        <a className="contacts__link" href="tel:{number}">
+        <a className="contacts__link" href={`tel:${number}`}>
           <p className="contacts__name">
             <IconContext.Provider value={{ className: 'react__icons--user' }}>
               <FaUser />
